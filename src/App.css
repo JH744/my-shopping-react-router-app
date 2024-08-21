@@ -1,0 +1,35 @@
+.login-button {
+  display: flex;
+  justify-content: end;
+  margin: 20px;
+}
+
+.nav-section {
+  display: flex;
+  justify-content: center;
+}
+
+.menuSection {
+  position: relative;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-list {
+  list-style-type: none;
+  display: flex;
+  gap: 10px;
+}
+
+.search-section {
+  position: absolute;
+  right: 20px;
+  border-bottom: 3px solid rgba(45, 45, 44, 0.067);
+}
+
+.search-input {
+  margin-left: 10px;
+  border: none;
+}
