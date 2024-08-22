@@ -2,9 +2,11 @@ import React from "react";
 
 const ProductCard = ({ item }) => {
   return (
-    <div>
-      <img width={200} src={item?.img} />
-      <div>console choice</div>
+    <div className="item-card">
+      <div className="item-card-img">
+        <img width={200} height={300} src={item?.img} />
+      </div>
+      <div>{item?.choice ? "console choice" : ""}</div>
       <div>{item?.title}</div>
       <div>{item?.price}</div>
       <div>{item?.new && "신제품"}</div>

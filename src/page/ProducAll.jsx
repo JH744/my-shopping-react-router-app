@@ -8,6 +8,7 @@ const ProducAll = () => {
 
   const getProducts = async () => {
     const url = "http://localhost:4000/products";
+    // const url = process.env.REACT_APP_API_URL;
     const response = await fetch(url);
     const data = await response.json();
     console.log(data);

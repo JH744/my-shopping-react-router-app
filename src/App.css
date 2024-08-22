@@ -1,7 +1,10 @@
 .login-button {
   display: flex;
   justify-content: end;
+  align-items: center;
+  gap: 4px;
   margin: 20px;
+  cursor: pointer;
 }
 
 .nav-section {
@@ -32,4 +35,20 @@
 .search-input {
   margin-left: 10px;
   border: none;
+}
+
+.item-card {
+  width: 100vw;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.item-card img:hover {
+  transform: scale(110%);
+}
+
+.item-card-img {
+  width: 200px;
+  height: 300px;
+  overflow: hidden;
 }
