@@ -14,7 +14,6 @@
 
 .menuSection {
   position: relative;
-  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,7 +37,6 @@
 }
 
 .item-card {
-  width: 100vw;
   margin-top: 10px;
   overflow: hidden;
 }
@@ -51,4 +49,27 @@
   width: 200px;
   height: 300px;
   overflow: hidden;
+}
+
+.loginForm {
+  padding: 40px;
+  box-sizing: border-box;
+  width: 400px;
+  height: 500px;
+  margin: auto;
+}
+
+.item-detail {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.item-info {
+  width: 400px;
+  height: 500px;
+}
+
+.add-btn {
+  margin-top: 40px;
 }
