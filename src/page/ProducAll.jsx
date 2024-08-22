@@ -32,7 +32,6 @@ const ProducAll = () => {
           })}
         </Row>
       </Container>
-      <ProductCard />
     </div>
   );
 };

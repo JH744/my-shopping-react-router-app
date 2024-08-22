@@ -4,7 +4,7 @@ import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ authenticate }) => {
   const menuList = [
     "여성",
     "Divided",
@@ -24,13 +24,16 @@ const Navbar = () => {
   return (
     <div>
       <div>
-        <div className="login-button" onClick={goLogin}>
-          <FontAwesomeIcon icon={faUser} />
-          <div className="bg">로그인</div>
-        </div>
+        {!authenticate && (
+          <div className="login-button" onClick={goLogin}>
+            <FontAwesomeIcon icon={faUser} />
+            <div className="bg">로그인</div>
+          </div>
+        )}
         <div>
           <div className="nav-section">
             <img
+              alt="상품이미지"
               width={100}
               src="https://upload.wikimedia.org/wikipedia/commons/5/53/H%26M-Logo.svg"
             />
