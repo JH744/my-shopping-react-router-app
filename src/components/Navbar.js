@@ -4,7 +4,7 @@ import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 
-const Navbar = ({ authenticate }) => {
+const Navbar = ({ authenticate, setAuthenticate }) => {
   const menuList = [
     "여성",
     "Divided",
@@ -20,6 +20,14 @@ const Navbar = ({ authenticate }) => {
   const goLogin = () => {
     navigate("login");
   };
+  const logout = () => {
+    setAuthenticate(false);
+    navigate("/");
+  };
+
+  const goHome = () => {
+    navigate("/");
+  };
 
   const searchKey = (event) => {
     if (event.key == "Enter") {
@@ -29,13 +37,19 @@ const Navbar = ({ authenticate }) => {
       navigate(`/?q=${keyword}`);
     }
   };
+
   return (
     <div>
       <div>
-        {!authenticate && (
+        {!authenticate ? (
           <div className="login-button" onClick={goLogin}>
             <FontAwesomeIcon icon={faUser} />
             <div className="bg">로그인</div>
+          </div>
+        ) : (
+          <div className="login-button" onClick={logout}>
+            <FontAwesomeIcon icon={faUser} />
+            <div className="bg">로그아웃</div>
           </div>
         )}
         <div>
@@ -44,6 +58,7 @@ const Navbar = ({ authenticate }) => {
               alt="상품이미지"
               width={100}
               src="https://upload.wikimedia.org/wikipedia/commons/5/53/H%26M-Logo.svg"
+              onClick={goHome}
             />
           </div>
           <div className="menuSection">

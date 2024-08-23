@@ -12,7 +12,7 @@ function App() {
   const [authenticate, setAuthenticate] = useState(false);
   return (
     <>
-      <Navbar authenticate={authenticate} />
+      <Navbar authenticate={authenticate} setAuthenticate={setAuthenticate} />
       <Routes>
         <Route path="/" element={<ProducAll />} />
         <Route
