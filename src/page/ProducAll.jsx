@@ -2,12 +2,14 @@ import React, { useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row, Col } from "react-bootstrap";
+import { useSearchParams } from "react-router-dom";
 
 const ProducAll = () => {
   const [productList, setProductList] = useState([]);
-
+  const [query, setQuery] = useSearchParams();
+  const searchQuery = query.get("q") || "";
   const getProducts = async () => {
-    const url = "http://localhost:4000/products";
+    const url = process.env.REACT_APP__API_URL + `/?q=${searchQuery}`;
     // const url = process.env.REACT_APP_API_URL;
     const response = await fetch(url);
     const data = await response.json();
@@ -17,7 +19,7 @@ const ProducAll = () => {
 
   useEffect(() => {
     getProducts();
-  }, []);
+  }, [query]);
 
   return (
     <div>

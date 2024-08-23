@@ -7,8 +7,8 @@ const ProductDetail = () => {
   const { id } = useParams();
   const [productItem, setProductItem] = useState({});
   const getItemData = async () => {
-    const url = `http://localhost:4000/products/${id}`;
-    // const url = process.env.REACT_APP_API_URL;
+    // const url = `http://localhost:4000/products/${id}`;
+    const url = process.env.REACT_APP__API_URL + `/${id}`;
     const response = await fetch(url);
     const item = await response.json();
     console.log("item", item);
