@@ -9,7 +9,7 @@ const ProducAll = () => {
   const [query, setQuery] = useSearchParams();
   const searchQuery = query.get("q") || "";
   const getProducts = async () => {
-    const url = process.env.REACT_APP__API_URL + `/?q=${searchQuery}`;
+    const url = process.env.REACT_APP_API_URL + `?q=${searchQuery}`;
     // const url = process.env.REACT_APP_API_URL;
     const response = await fetch(url);
     const data = await response.json();
@@ -18,6 +18,8 @@ const ProducAll = () => {
   };
 
   useEffect(() => {
+    let dd = process.env.REACT_APP_API_URL;
+    console.log(dd);
     getProducts();
   }, [query]);
 
