@@ -9,7 +9,7 @@ const ProductCard = ({ item }) => {
   return (
     <div className="item-card" onClick={onClickCard}>
       <div className="item-card-img">
-        <img width={200} height={300} src={item?.img} />
+        <img src={item?.img} />
       </div>
       <div>{item?.choice ? "console choice" : ""}</div>
       <div>{item?.title}</div>

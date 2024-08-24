@@ -1,4 +1,11 @@
+.barBtn {
+  float: left;
+  margin: 20px;
+  cursor: pointer;
+}
+
 .login-button {
+  float: right;
   display: flex;
   justify-content: end;
   align-items: center;
@@ -11,7 +18,6 @@
   display: flex;
   justify-content: center;
 }
-
 .menuSection {
   position: relative;
   display: flex;
@@ -23,6 +29,17 @@
   list-style-type: none;
   display: flex;
   gap: 10px;
+}
+
+.side-menu-list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.side-menu-item {
+  cursor: pointer;
 }
 
 .search-section {
@@ -39,16 +56,69 @@
 .item-card {
   margin-top: 10px;
   overflow: hidden;
-}
 
-.item-card img:hover {
-  transform: scale(110%);
+  img:hover {
+    transform: scale(110%);
+    transition: 100ms;
+  }
 }
 
 .item-card-img {
   width: 200px;
   height: 300px;
   overflow: hidden;
+  img {
+    width: 200px;
+    height: 300px;
+  }
+}
+
+.side-menu {
+  display: none;
+}
+.side-menu-btn {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .side-menu-btn {
+    display: block;
+  }
+  .side-menu {
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 270px;
+    height: 100%;
+    background-color: rgb(166, 166, 166);
+  }
+
+  .closeBtn {
+    cursor: pointer;
+    float: right;
+    margin: 10px;
+  }
+
+  .menu-list {
+    display: none;
+  }
+
+  .search-section {
+    display: none;
+  }
+
+  .menu-container {
+    margin: auto;
+    margin-top: 30px;
+    width: 200px;
+    height: 500px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 992px) {
+  .search-section {
+    display: none;
+  }
 }
 
 .loginForm {
