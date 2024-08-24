@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBars,
+  faMagnifyingGlass,
+  faXmark,
+} from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 
 const Navbar = ({ authenticate, setAuthenticate }) => {
+  const [isOpenSideBar, setIsOpenSidebar] = useState(false);
+
   const menuList = [
     "여성",
     "Divided",
@@ -38,20 +44,45 @@ const Navbar = ({ authenticate, setAuthenticate }) => {
     }
   };
 
+  const onClickSideBar = () => {
+    setIsOpenSidebar(!isOpenSideBar);
+  };
+
   return (
     <div>
+      {isOpenSideBar && (
+        <div className="side-menu">
+          <div className="closeBtn" onClick={onClickSideBar}>
+            <FontAwesomeIcon icon={faXmark} />
+          </div>
+          <div className="menu-container">
+            <ul className="side-menu-list">
+              {menuList.map((item, index) => (
+                <div className="side-menu-item">
+                  <li key={index}>{item}</li>
+                </div>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )}
       <div>
-        {!authenticate ? (
-          <div className="login-button" onClick={goLogin}>
-            <FontAwesomeIcon icon={faUser} />
-            <div className="bg">로그인</div>
+        <div className="top-menu">
+          <div className="barBtn side-menu-btn" onClick={onClickSideBar}>
+            <FontAwesomeIcon icon={faBars} />
           </div>
-        ) : (
-          <div className="login-button" onClick={logout}>
-            <FontAwesomeIcon icon={faUser} />
-            <div className="bg">로그아웃</div>
-          </div>
-        )}
+          {!authenticate ? (
+            <div className="login-button" onClick={goLogin}>
+              <FontAwesomeIcon icon={faUser} />
+              <div className="bg">로그인</div>
+            </div>
+          ) : (
+            <div className="login-button" onClick={logout}>
+              <FontAwesomeIcon icon={faUser} />
+              <div className="bg">로그아웃</div>
+            </div>
+          )}
+        </div>
         <div>
           <div className="nav-section">
             <img
