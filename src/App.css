@@ -53,7 +53,14 @@
   border: none;
 }
 
+.contents {
+  display: flex;
+  justify-content: center;
+}
+
 .item-card {
+  margin: auto;
+  width: 200px;
   margin-top: 10px;
   overflow: hidden;
 
@@ -142,4 +149,9 @@
 
 .add-btn {
   margin-top: 40px;
+}
+
+.product-img {
+  display: flex;
+  justify-content: end;
 }
