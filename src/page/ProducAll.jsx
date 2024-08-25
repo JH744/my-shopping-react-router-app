@@ -24,7 +24,7 @@ const ProducAll = () => {
   }, [query]);
 
   return (
-    <div>
+    <div className="contents">
       <Container>
         <Row>
           {productList?.map((item, index) => {
